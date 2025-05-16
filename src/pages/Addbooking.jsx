@@ -88,7 +88,7 @@ const Addbooking = () => {
                         <Col xs={24} sm={12}>
                             <Form.Item
                                 label="Phone No"
-                                name="mobile"
+                                name="phone"
                                 rules={[{ required: true, message: "Please enter your phone number" }]}
                             >
                                 <Input placeholder="Enter your phone number" maxLength={10} minLength={10} />
