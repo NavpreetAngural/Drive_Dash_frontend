@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { CarFront, CalendarDays, LifeBuoy, Gauge, Star } from 'lucide-react';
+import { CarFront, CalendarDays,Gauge , Book  } from 'lucide-react';
+import axiosinstance from '../../axiosinstance';
+import { baseURL } from '../../config';
+
 
 const RenterHome = () => {
+    const [bookings, setBookings] = useState([]);
   const fullname = localStorage.getItem('fullname');
   const role = localStorage.getItem('role');
+  const email = localStorage.getItem('email')
 
+   useEffect(() => {
+      viewBookings();
+    }, []);
+  
+    const viewBookings = async () => {
+      try {
+        const response = await axiosinstance.get(`${baseURL}/booking/mybooking/${email}`);
+        setBookings(response.data.length);
+      } catch (error) {
+        console.log('Error while fetching bookings:', error);
+      }
+    };
   return (
     <div className="min-h-screen  !py-12 flex justify-center  ">
       <div className="max-w-7xl w-full">
@@ -19,29 +36,25 @@ const RenterHome = () => {
         </div>
 
         {/* Stats Overview (dummy) */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 !gap-6 !mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 !gap-6 !mb-16">
           <div className="bg-white/70 rounded-xl !p-6 shadow text-center">
             <Gauge className="text-green-600 mx-auto mb-3" size={32} />
             <h3 className="text-xl font-semibold">Active Bookings</h3>
-            <p className="text-3xl font-bold text-gray-700 mt-2">5</p>
+            <p className="text-3xl font-bold text-gray-700 mt-2">{bookings}</p>
           </div>
           <div className="bg-white/70 rounded-xl !p-6 shadow text-center">
             <CarFront className="text-blue-600 mx-auto mb-3" size={32} />
             <h3 className="text-xl font-semibold">Vehicles Rented</h3>
-            <p className="text-3xl font-bold text-gray-700 mt-2">8</p>
+            <p className="text-3xl font-bold text-gray-700 mt-2">{bookings}</p>
           </div>
-          <div className="bg-white/70 rounded-xl !p-6 shadow text-center">
-            <Star className="text-yellow-500 mx-auto mb-3" size={32} />
-            <h3 className="text-xl font-semibold">Reviews Left</h3>
-            <p className="text-3xl font-bold text-gray-700 mt-2">3</p>
-          </div>
+          
         </div>
 
         {/* Dashboard Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 !gap-12">
           {/* Browse Vehicles */}
           <Link
-            to="/vehicles"
+            to="/renterdashboard/vehiclecategory"
             className="group bg-white/60 backdrop-blur-lg border border-gray-200 !p-8 rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
           >
             <div className="flex items-center gap-6 !mb-6">
@@ -55,7 +68,7 @@ const RenterHome = () => {
 
           {/* My Bookings */}
           <Link
-            to="/renter/bookings"
+            to="/renterdashboard/mybooking"
             className="group bg-white/60 backdrop-blur-lg border border-gray-200 !p-8 rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
           >
             <div className="flex items-center gap-6 !mb-6">
@@ -69,15 +82,15 @@ const RenterHome = () => {
 
           {/* Support */}
           <Link
-            to="/contact"
+            to="/renterdashboard/addbooking"
             className="group bg-white/60 backdrop-blur-lg border border-gray-200 !p-8 rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
           >
             <div className="flex items-center gap-6 !mb-6">
-              <LifeBuoy className="text-purple-600 group-hover:text-purple-800" size={36} />
-              <h3 className="text-2xl font-semibold text-gray-800">Support</h3>
+              < Book className="text-purple-600 group-hover:text-purple-800" size={36} />
+              <h3 className="text-2xl font-semibold text-gray-800">Add Booking</h3>
             </div>
             <p className="text-gray-600 text-lg">
-              Need help? Reach out to our team anytime.
+              Book Vehicle from here . 
             </p>
           </Link>
         </div>

@@ -21,7 +21,7 @@ const Vehiclecategory = () => {
     { type: "Modified Vehicle", image: modified },
   ];
   const handleCardClick = (type) => {
-    navigate(`/vehicle/${type}`);
+    navigate(`/renterdashboard/vehicle/${type}`);
   };
 
   const role = localStorage.getItem('role')

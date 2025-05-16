@@ -10,6 +10,7 @@ const Vehicletype = () => {
   const { type } = useParams(); // car, bike, etc.
   const [vehicles, setVehicles] = useState([]);
   const role = localStorage.getItem('role')
+  
 
   useEffect(() => {
     axios.get(`${baseURL}/vehicle/type/${type}`)

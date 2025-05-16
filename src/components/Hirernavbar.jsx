@@ -32,7 +32,7 @@ const Hirernavbar = () => {
   return (
     <header id="head">
       <nav className="navbar flex justify-between items-center bg-white !px-4 !py-2 shadow-md">
-        <NavLink to="/">
+        <NavLink to="/hirerdashboard">
           <img src={logo} alt="Logo" className="h-20 w-auto" />
         </NavLink>
 
