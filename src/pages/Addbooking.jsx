@@ -16,7 +16,9 @@ const Addbooking = () => {
     const [isModifiedVehicle, setIsModifiedVehicle] = useState(false);
     const email = localStorage.getItem('email')
     const fullname = localStorage.getItem('fullname')
-    const mobile = localStorage.getItem('phone')
+    const phone = localStorage.getItem('phone')
+    console.log(phone);
+    
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -48,7 +50,7 @@ const Addbooking = () => {
                 <Form
                     layout="vertical"
                     onFinish={onFinish}
-                    initialValues={{email , fullname , mobile}}
+                    initialValues={{email , fullname , phone}}
                     style={{
                         width: "100%",
                         maxWidth: "800px",
