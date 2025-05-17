@@ -305,7 +305,7 @@ const Mybookings = () => {
             >
               <p><strong>Full Name:</strong> {booking.fullname}</p>
               <p><strong>Email:</strong> {booking.email}</p>
-              <p><strong>Phone:</strong> {booking.mobile}</p>
+              <p><strong>Phone:</strong> {booking.phone}</p>
               <p><strong>License No:</strong> {booking.licenseNo}</p>
               {booking.vehicleType === 'Modified Vehicle' && (
                 <p><strong>Modifications:</strong> {booking.modificationDetails || 'N/A'}</p>
