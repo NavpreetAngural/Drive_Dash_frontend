@@ -15,18 +15,15 @@ const Addbooking = () => {
     const [isModifiedVehicle, setIsModifiedVehicle] = useState(false);
     const email = localStorage.getItem('email')
     const fullname = localStorage.getItem('fullname')
+    const role = localStorage.getItem('role')
     const phone = localStorage.getItem('phone')
-    console.log(phone);
-    
-
+    console.log(phone)
     useEffect(() => {
         window.scrollTo(0, 0);
-      }, []);
+    }, []);
     const handleVehicleChange = (value) => {
         setIsModifiedVehicle(value === "Modified Vehicle");
     };
-
-    const role = localStorage.getItem('role')
     const onFinish = (values) => {
         axios.post(`${baseURL}/booking/add`, values)
             .then((response) => {
@@ -44,12 +41,12 @@ const Addbooking = () => {
 
     return (
         <div>
-            {role == 'renter'  ? "" : <Navbar /> }
+            {role == 'renter' ? "" : <Navbar />}
             <div style={{ display: "flex", justifyContent: "center", padding: "20px" }} >
                 <Form
                     layout="vertical"
                     onFinish={onFinish}
-                    initialValues={{email , fullname , phone}}
+                    initialValues={{ email, fullname, phone}}
                     style={{
                         width: "100%",
                         maxWidth: "800px",
@@ -59,7 +56,7 @@ const Addbooking = () => {
                         boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
                     }}
                 >
-                    <h1 style={{ textAlign: "center", fontSize: "24px", fontWeight: "bold"}}>Add Booking</h1>
+                    <h1 style={{ textAlign: "center", fontSize: "24px", fontWeight: "bold" }}>Add Booking</h1>
                     <h4 style={{ textAlign: "center", fontWeight: "bold", marginBottom: "30px" }}>View all Vehicles from <b></b> Page</h4>
                     <Row gutter={16}>
                         <Col xs={24} sm={12}>
@@ -157,7 +154,7 @@ const Addbooking = () => {
                     </Form.Item>
                 </Form>
             </div>
-            {role == 'renter'  ? "" : <Renterfooter /> }
+            {role == 'renter' ? "" : <Renterfooter />}
         </div>
     );
 };

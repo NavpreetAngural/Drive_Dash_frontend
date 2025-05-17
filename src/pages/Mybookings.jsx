@@ -24,7 +24,9 @@ const Mybookings = () => {
   const [form] = Form.useForm();
   const [editingUserId, setEditingUserId] = useState(null);
   const [isModifiedVehicle, setIsModifiedVehicle] = useState(false);
+  const fullname = localStorage.getItem('fullname')
   const email = localStorage.getItem('email')
+  const phone = localStorage.getItem('phone')
 
   const handleVehicleChange = (value) => {
     setIsModifiedVehicle(value === 'Modified Vehicle');
@@ -69,7 +71,7 @@ const Mybookings = () => {
   const showModal = () => {
     setIsModalOpen(true);
     setEditingUserId(null);
-    setIsModifiedVehicle(false); 
+    setIsModifiedVehicle(false);
     form.resetFields();
   };
 
@@ -156,17 +158,17 @@ const Mybookings = () => {
   return (
     <>
       <Row justify="center" align="middle" style={{ margin: "1rem 0" }} gutter={[16, 16]}>
-              <Col xs={24} sm={16} style={{ textAlign: 'center' }}>
-                <Title level={4} style={{ marginBottom: 0 }}>
-                  My Bookings
-                </Title>
-              </Col>
-              <Col xs={24} sm={8} style={{ textAlign: 'center' }}>
-                <Button type='primary' onClick={showModal}>
-                  Add Booking
-                </Button>
-              </Col>
-            </Row>
+        <Col xs={24} sm={16} style={{ textAlign: 'center' }}>
+          <Title level={4} style={{ marginBottom: 0 }}>
+            My Bookings
+          </Title>
+        </Col>
+        <Col xs={24} sm={8} style={{ textAlign: 'center' }}>
+          <Button type='primary' onClick={showModal}>
+            Add Booking
+          </Button>
+        </Col>
+      </Row>
 
       <Modal
         title={editingUserId ? 'Edit Booking' : 'Add Booking'}
@@ -178,6 +180,7 @@ const Mybookings = () => {
         <Form
           layout="vertical"
           onFinish={onFinish}
+          initialValues={{ email, fullname, phone}}
           form={form}
           style={{
             padding: '30px',
@@ -202,7 +205,7 @@ const Mybookings = () => {
 
           <Form.Item
             label="Phone No"
-            name="mobile"
+            name="phone"
             rules={[
               {
                 required: true,
