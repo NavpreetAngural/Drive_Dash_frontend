@@ -15,8 +15,8 @@ const Addbooking = () => {
     const [isModifiedVehicle, setIsModifiedVehicle] = useState(false);
     const email = localStorage.getItem('email')
     const fullname = localStorage.getItem('fullname')
-    const mobile = localStorage.getItem('mobile')
-    console.log(mobile);
+    const phone = localStorage.getItem('phone')
+    console.log(phone);
     
 
     useEffect(() => {
@@ -87,7 +87,7 @@ const Addbooking = () => {
                         <Col xs={24} sm={12}>
                             <Form.Item
                                 label="Phone No"
-                                name="mobile"
+                                name="phone"
                                 rules={[{ required: true, message: "Please enter your phone number" }]}
                             >
                                 <Input placeholder="Enter your phone number" maxLength={10} minLength={10} />
