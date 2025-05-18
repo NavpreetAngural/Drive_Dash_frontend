@@ -81,7 +81,7 @@ const Mybookings = () => {
         await axiosinstance.put(`${baseURL}/booking/update/${editingUserId}`, values);
         toast.success('Booking updated successfully');
       } else {
-        const response = await axios.post(`${baseURL}/booking/add`, values);
+        const response = await axiosinstance.post(`${baseURL}/booking/add`, values);
         toast.success(response.data.message);
       }
       form.resetFields();
