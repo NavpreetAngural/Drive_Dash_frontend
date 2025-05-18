@@ -41,7 +41,7 @@ const Addvehicle = () => {
             .then((response) => {
                 if (response.status === 200) {
                     toast.success(response.data.message);
-                    navigate("/");
+                    navigate("/hirerdashboard/managevehicle");
                 } else {
                     toast.error(response.data.message);
                 }
