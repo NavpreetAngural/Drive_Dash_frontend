@@ -66,7 +66,7 @@ const About = () => {
             <div className="divss">
               <img src={men_3} alt="men" />
               <center>
-                <h3 className='font-bold '> Carlos crafts</h3>
+                <h3 className='font-bold '> Carlos Crafts</h3>
                 <p>Carlos crafts compelling campaigns and manages customer feedback to keep our community informed and engaged. His focus on customer satisfaction helps build trust and loyalty.</p>              </center>
             </div>
           </div>
@@ -141,7 +141,7 @@ const About = () => {
           <div className="w-[200px]">
             <img src={men_3} alt="men" />
             <center>
-              <h3 className='font-bold '> Carlos crafts </h3>
+              <h3 className='font-bold '> Carlos Crafts </h3>
               <h3> Rating : 5/5 </h3>
               <span className="fa fa-star checked" />
               <span className="fa fa-star checked" />

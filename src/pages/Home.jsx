@@ -252,7 +252,7 @@ const Home = () => {
                             <div className="divss">
                                 <img src={men_1} alt="men" />
                                 <center>
-                                    <h3> John </h3>
+                                    <h3 className='font-bold '> John </h3>
                                     <h3> Rating : 5/5 </h3>
                                     <span className="fa fa-star checked" />
                                     <span className="fa fa-star checked" />
@@ -264,7 +264,7 @@ const Home = () => {
                             <div className="divss">
                                 <img src={men_2} alt="men" />
                                 <center>
-                                    <h3> John </h3>
+                                    <h3 className='font-bold '> Micheal </h3>
                                     <h3> Rating : 5/5 </h3>
                                     <span className="fa fa-star checked" />
                                     <span className="fa fa-star checked" />
@@ -276,19 +276,7 @@ const Home = () => {
                             <div className="divss">
                                 <img src={men_3} alt="men" />
                                 <center>
-                                    <h3> John </h3>
-                                    <h3> Rating : 5/5 </h3>
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star checked" />
-                                </center>
-                            </div>
-                            <div className="divss">
-                                <img src={men_1} alt="men" />
-                                <center>
-                                    <h3> John </h3>
+                                    <h3 className='font-bold '>  Carlos Crafts </h3>
                                     <h3> Rating : 5/5 </h3>
                                     <span className="fa fa-star checked" />
                                     <span className="fa fa-star checked" />
