@@ -1,5 +1,7 @@
 import React from 'react';
-import men_1 from "../assets/images/men_1.jpg";
+import men_1 from "../assets/images/men_1.jpg"
+import men_2 from "../assets/images/men_2.jpg"
+import men_3 from "../assets/images/men_3.jpg"
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../index.css";
@@ -45,18 +47,28 @@ const About = () => {
         </div>
 
         {/* Meet the Team */}
-        <div className="w-[100%] flex flex-col items-center !py-4">
+        <div className="container flex flex-col items-center !py-4  ">
           <h1 className="text-xl font-bold !mb-4">Meet the Team</h1>
-          <div className="flex flex-wrap justify-around gap-16">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="divss w-[100%]">
-                <img src={men_1} alt="team member" className="w-full !h-auto" />
-                <div className="text-center">
-                  <h3 className="font-bold text-lg">John</h3>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit</p>
-                </div>
-              </div>
-            ))}
+          <div className="flex flex-wrap  gap-50 justify-between ">
+            <div className="divss ">
+              <img src={men_1} alt="men" />
+              <center>
+                <h3 className='font-bold '> John </h3>
+                <p>Visionary leader and entrepreneur, John brings over 10 years of experience in transportation technology. He oversees strategic planning and is the driving force our company’s growth and vision.</p>
+              </center>
+            </div>
+            <div className="divss">
+              <img src={men_2} alt="men" />
+              <center>
+                <h3 className='font-bold '> Michael</h3>
+                <p>Michael designs seamless and user-centric interfaces for our platform. He ensures that every page is easy to navigate and visually appealing, giving users a hassle-free experience.</p>              </center>
+            </div>
+            <div className="divss">
+              <img src={men_3} alt="men" />
+              <center>
+                <h3 className='font-bold '> Carlos crafts</h3>
+                <p>Carlos crafts compelling campaigns and manages customer feedback to keep our community informed and engaged. His focus on customer satisfaction helps build trust and loyalty.</p>              </center>
+            </div>
           </div>
         </div>
 
@@ -86,21 +98,59 @@ const About = () => {
         </div>
 
         {/* Testimonials */}
-        <div className="w-full flex flex-col items-center !py-4">
-          <h1 className="text-xl font-bold !mb-4">Testimonials</h1>
-          <div className="flex flex-wrap justify-center gap-16">
-            {[5, 4, 5].map((stars, i) => (
-              <div key={i} className="divss w-60">
-                <img src={men_1} alt="testimonial" className="w-full !h-auto" />
-                <div className="text-center">
-                  <h3>John</h3>
-                  {[...Array(5)].map((_, idx) => (
-                    <span key={idx} className={`fa fa-star ${idx < stars ? 'checked' : ''}`} />
-                  ))}
-                </div>
-              </div>
-            ))}
+        <div className="container">
+          <div style={{ width: "100%", marginTop: 20 }}>
+            <center>
+              <h1
+                style={{
+                  display: "inline",
+                  boxShadow: "1px 1px 1px",
+                  padding: 8,
+                  backgroundImage: "radial-gradient(white , rgb(180, 215, 228))",
+                  borderRadius: 10
+                }}
+              >
+                Testimonials{" "}
+              </h1>
+            </center>
           </div>
+          <div className="w-[200px]">
+            <img src={men_1} alt="men" />
+            <center>
+              <h3> John </h3>
+              <h3> Rating : 5/5 </h3>
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+            </center>
+          </div>
+          <div className="w-[200px]">
+            <img src={men_2} alt="men" />
+            <center>
+              <h3> John </h3>
+              <h3> Rating : 5/5 </h3>
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+            </center>
+          </div>
+          <div className="w-[200px]">
+            <img src={men_3} alt="men" />
+            <center>
+              <h3> John </h3>
+              <h3> Rating : 5/5 </h3>
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+              <span className="fa fa-star checked" />
+            </center>
+          </div>
+
         </div>
       </div>
       <Footer />

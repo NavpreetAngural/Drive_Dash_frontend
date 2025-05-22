@@ -3,6 +3,8 @@ import car5 from "../assets/images/car5.jpg"
 import car7 from "../assets/images/car7.jpg"
 import foot_banner from "../assets/images/foot_banner.avif"
 import men_1 from "../assets/images/men_1.jpg"
+import men_2 from "../assets/images/men_2.jpg"
+import men_3 from "../assets/images/men_3.jpg"
 import banner_1 from "../assets/images/banner_1.png"
 import banner_4 from "../assets/images/banner_4.png"
 import { NavLink } from "react-router";
@@ -260,7 +262,7 @@ const Home = () => {
                                 </center>
                             </div>
                             <div className="divss">
-                                <img src={men_1} alt="men" />
+                                <img src={men_2} alt="men" />
                                 <center>
                                     <h3> John </h3>
                                     <h3> Rating : 5/5 </h3>
@@ -272,7 +274,7 @@ const Home = () => {
                                 </center>
                             </div>
                             <div className="divss">
-                                <img src={men_1} alt="men" />
+                                <img src={men_3} alt="men" />
                                 <center>
                                     <h3> John </h3>
                                     <h3> Rating : 5/5 </h3>
