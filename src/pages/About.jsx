@@ -129,7 +129,7 @@ const About = () => {
           <div className="w-[200px]">
             <img src={men_2} alt="men" />
             <center>
-              <h3> John </h3>
+              <h3> Michael </h3>
               <h3> Rating : 5/5 </h3>
               <span className="fa fa-star checked" />
               <span className="fa fa-star checked" />
@@ -141,7 +141,7 @@ const About = () => {
           <div className="w-[200px]">
             <img src={men_3} alt="men" />
             <center>
-              <h3> John </h3>
+              <h3> Carlos crafts </h3>
               <h3> Rating : 5/5 </h3>
               <span className="fa fa-star checked" />
               <span className="fa fa-star checked" />
