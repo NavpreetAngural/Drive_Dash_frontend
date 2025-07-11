@@ -73,11 +73,7 @@ const Hirernavbar = () => {
               Manage Vehicle
             </NavLink>
           </li>
-          <li className="!py-2 md:!py-0 text-lg">
-            <NavLink to="/hirerdashboard/viewbookings" className="nav-link" onClick={handleLinkClick}>
-              View Bookings
-            </NavLink>
-          </li>
+
 
           <li className="relative group !p-4 rounded-lg cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out">
             {isProfileClicked ? (
