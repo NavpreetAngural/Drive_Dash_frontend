@@ -146,6 +146,7 @@
       },
       {
         title: 'Details',
+        className ="w-[200px]"
         dataIndex: 'details',
         key: 'details',
       },
