@@ -1,14 +1,53 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router'; // Fixed import
-import { CalendarCheck, Car, Gauge, Users , Edit} from 'lucide-react';
+import { CalendarCheck, Car, Gauge, Users, Edit } from 'lucide-react';
 import { baseURL } from '../../config';
 import axiosinstance from '../../axiosinstance';
+import gsap from 'gsap';
 
 const HirerHome = () => {
-  const [total , setTotal] = useState("")
+  const [total, setTotal] = useState("")
   const fullname = localStorage.getItem('fullname');
   const role = localStorage.getItem('role');
   const email = localStorage.getItem('email');
+  const roleRef = useRef(null)
+  const vehicleRef = useRef(null)
+  const bookRef = useRef(null)
+  const myBookingRef = useRef(null)
+  const addVehicleRef = useRef(null)
+  const manageVehicleRef = useRef(null)
+
+  useEffect(() => {
+    gsap.to(roleRef.current, {
+      duration: 1,
+      y: 50,
+    }),
+      gsap.to(vehicleRef.current, {
+        duration: 1,
+        x: 30,
+      }),
+      gsap.to(bookRef.current, {
+        duration: 1,
+        x: -30,
+      }),
+      gsap.to(myBookingRef.current, {
+        duration: 1,
+        opacity: 1,
+      });
+
+    gsap.to(addVehicleRef.current, {
+      duration: 1,
+      opacity: 1,
+    });
+
+    gsap.to(manageVehicleRef.current, {
+      duration: 1,
+      opacity: 1,
+    })
+
+  }, []);
+
+
 
   useEffect(() => {
     totalVehicles()
@@ -28,7 +67,7 @@ const HirerHome = () => {
     <div className="min-h-screen !px-8 !py-12 flex justify-center ">
       <div className="max-w-7xl w-full">
         {/* Welcome Banner */}
-        <div className="bg-white/70 backdrop-blur-md rounded-3xl !p-10 text-center  !mb-16">
+        <div ref={roleRef} className=" bg-white/70 backdrop-blur-md rounded-3xl !p-10 text-center  !mb-16">
           <h1 className="text-4xl font-bold text-gray-800 !mb-2">Welcome, {fullname} 👋</h1>
           <p className="text-xl text-gray-700">
             Role: <span className="text-blue-600 font-semibold">{role}</span>
@@ -39,24 +78,24 @@ const HirerHome = () => {
         </div>
 
         {/* Stats Overview */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 !gap-6 !mb-16">
-          <div className="bg-white/70 rounded-xl !p-6 shadow text-center">
-            <Gauge className="text-indigo-600 mx-auto !mb-3" size={32} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 !gap-20 !mb-16">
+          <div ref={vehicleRef} className="bg-white/70 rounded-xl !p-6 shadow text-center">
+            <Gauge className="text-indigo-600 mx-auto !mb-3" size={24} />
             <h3 className="text-xl font-semibold">Total Vehicles</h3>
             <p className="text-3xl font-bold text-gray-700 !mt-2">{total}</p>
           </div>
-          <div className="bg-white/70 rounded-xl !p-6 shadow text-center">
-            <CalendarCheck className="text-green-600 mx-auto !mb-3" size={32} />
+          <div ref={bookRef} className="bg-white/70 rounded-xl !p-6 shadow text-center">
+            <CalendarCheck className="text-green-600 mx-auto !mb-3" size={24} />
             <h3 className="text-xl font-semibold">Bookings</h3>
             <p className="text-3xl font-bold text-gray-700 !mt-2">7</p>
           </div>
-          
+
         </div>
 
         {/* Dashboard Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 !gap-12">
           {/* My Bookings */}
-          <Link
+          <Link ref={myBookingRef} style={{ opacity: 0 }}
             to="/hirerdashboard/viewbookings"
             className="group bg-white/60 backdrop-blur-lg border border-gray-200 !p-8 rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
           >
@@ -70,8 +109,8 @@ const HirerHome = () => {
           </Link>
 
           {/* Add Vehicle */}
-          <Link
-            to="/hirerdashboard/addvehicle"
+          <Link ref={addVehicleRef}
+            to="/hirerdashboard/addvehicle" style={{ opacity: 0 }}
             className="group bg-white/60 backdrop-blur-lg border border-gray-200 !p-8 rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
           >
             <div className="flex items-center gap-6 !mb-6">
@@ -84,8 +123,8 @@ const HirerHome = () => {
           </Link>
 
           {/* Support */}
-          <Link
-            to="/hirerdashboard/managevehicle"
+          <Link ref={manageVehicleRef}
+            to="/hirerdashboard/managevehicle" style={{ opacity: 0 }}
             className="group bg-white/60 backdrop-blur-lg border border-gray-200 !p-8 rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
           >
             <div className="flex items-center gap-6 !mb-6">

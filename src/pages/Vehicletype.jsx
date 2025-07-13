@@ -1,21 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import axios from 'axios';
 import { baseURL } from '../../config';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import Renterfooter from '../components/Renterfooter';
+import gsap from 'gsap';
 
 const Vehicletype = () => {
   const { type } = useParams(); // car, bike, etc.
   const [vehicles, setVehicles] = useState([]);
   const role = localStorage.getItem('role')
+  const vehicleRef = useRef(null)
   
 
   useEffect(() => {
     axios.get(`${baseURL}/vehicle/type/${type}`)
       .then(res => setVehicles(res.data))
       .catch(err => console.error(err));
+
+      gsap.to(vehicleRef.current , {
+        opacity : 1,
+        duration : 3
+      })
+
   }, [type]);
 
   return (
@@ -26,11 +33,11 @@ const Vehicletype = () => {
       <h2 className="text-4xl font-semibold text-center !m-8 text-indigo-600">
         All {type}s Available
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 !m-8">
+      <div ref={vehicleRef} style={{opacity:0}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 !m-8">
         {vehicles.map(v => (
           <div key={v._id} className="bg-white rounded-lg !pb-3 shadow-xl transform hover:scale-105 transition-transform duration-300 ease-in-out overflow-hidden ">
             <img
-             src={`https://drive-dash-backend.onrender.com/api/uploads/${v.vehicleImage}`}
+             src={v.url}
               alt={v.vehicleName}
               className="w-full h-48 object-cover rounded-t-lg"
             />

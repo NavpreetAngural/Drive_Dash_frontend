@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useNavigate } from 'react-router';
 import { Card, Typography, Space, Modal, Form, Row, Col, Input, Select, Button, Radio } from 'antd';
 import {
@@ -12,6 +12,7 @@ import { MdEdit } from 'react-icons/md';
 import axiosinstance from '../../axiosinstance';
 import { baseURL } from '../../config';
 import { toast } from 'react-toastify';
+import gsap from 'gsap';
 
 const { Title, Text } = Typography;
 
@@ -20,6 +21,7 @@ const Hirerprofile = () => {
   const email = localStorage.getItem('email');
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [form] = Form.useForm()
+  const profileRef = useRef(null)
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -32,6 +34,13 @@ const Hirerprofile = () => {
     };
     fetchUser();
   }, [email]);
+
+  useEffect(() => {
+    gsap.to(profileRef.current, {
+      y: 20,
+      duration: 1
+    })
+  })
 
   const handleEdit = (user) => {
     setIsModalOpen(true);
@@ -58,7 +67,7 @@ const Hirerprofile = () => {
 
   return (
     <div className="flex justify-center items-center w-full !px-4">
-      <Card className="w-full sm:w-3/4 md:w-2/3 lg:w-1/3 !my-10 rounded-2xl shadow-lg border border-gray-200">
+      <Card ref={profileRef} className="w-full sm:w-3/4 md:w-2/3 lg:w-1/3 !my-10 rounded-2xl shadow-lg border border-gray-200">
         <div className="flex flex-col items-center text-center space-y-4 p-6">
           {/* Title with Edit icon inline */}
           <Title level={3} className="!mb-0 flex items-center gap-2">

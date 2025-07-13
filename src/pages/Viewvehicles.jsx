@@ -114,11 +114,11 @@ const Viewvehicles = () => {
         },
         {
             title: 'Vehicle Image',
-            dataIndex: 'vehicleImage',
-            key: 'vehicleImage',
-            render: (vehicleImage) => (
+            dataIndex: 'url',
+            key: 'url',
+            render: (url) => (
                 <img
-                    src={`http://localhost:3000/uploads/${vehicleImage}`}
+                    src={url}
                     alt="Vehicle"
                     style={{ width: '100px', height: '60px', objectFit: 'cover', borderRadius: '8px' }}
                 />

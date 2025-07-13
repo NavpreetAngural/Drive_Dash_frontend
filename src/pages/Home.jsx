@@ -109,7 +109,8 @@ const Home = () => {
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-16 ">
                                 {vehicles.map((vehicle, index) => (
                                     <div
-                                        className="divs flex flex-col items-center "
+
+                                        className="divs flex flex-col items-center border-1 border-white hover:border-black"
                                     >
                                         <img src={`https://drive-dash-backend.onrender.com/api/uploads/${vehicle.vehicleImage}`} alt="Vehicle" className="w-full h-[200px] sm:h-[200px] md:h-[2000px] lg:h-[200px]  rounded-lg" />
                                         <h3 className="text-lg font-semibold mt-2">{vehicle.vehicleName}</h3>
