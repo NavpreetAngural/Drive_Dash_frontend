@@ -112,7 +112,7 @@ const Home = () => {
 
                                         className="divs flex flex-col items-center border-1 border-white hover:border-black"
                                     >
-                                        <img src={`https://drive-dash-backend.onrender.com/api/uploads/${vehicle.vehicleImage}`} alt="Vehicle" className="w-full h-[200px] sm:h-[200px] md:h-[2000px] lg:h-[200px]  rounded-lg" />
+                                        <img src={vehicle.url} alt="Vehicle" className="w-full h-[200px] sm:h-[200px] md:h-[2000px] lg:h-[200px]  rounded-lg" />
                                         <h3 className="text-lg font-semibold mt-2">{vehicle.vehicleName}</h3>
                                         <h3 className="text-lg">{vehicle.rentPerDay} rs.</h3>
                                         <button className="bg-gray-300 w-[100px] h-[30px] text-black rounded-lg mt-2 hover:bg-gray-400 transition-all">
