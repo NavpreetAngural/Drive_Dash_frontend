@@ -51,20 +51,26 @@ const About = () => {
           <h1 className="text-xl font-bold !mb-4">Meet the Team</h1>
           <div className="flex flex-wrap  gap-50 justify-between ">
             <div className="divss ">
+              <a href={men_1} target='blank'>
               <img src={men_1} alt="men" />
+              </a>
               <center>
                 <h3 className='font-bold '> John </h3>
                 <p>Visionary leader and entrepreneur, John brings over 10 years of experience in transportation technology. He oversees strategic planning and is the driving force our company’s growth and vision.</p>
               </center>
             </div>
             <div className="divss">
+              <a href={men_2} target='blank'>
               <img src={men_2} alt="men" />
+              </a>
               <center>
                 <h3 className='font-bold '> Michael</h3>
                 <p>Michael designs seamless and user-centric interfaces for our platform. He ensures that every page is easy to navigate and visually appealing, giving users a hassle-free experience.</p>              </center>
             </div>
             <div className="divss">
+              <a href={men_3} target='blank'>
               <img src={men_3} alt="men" />
+              </a>
               <center>
                 <h3 className='font-bold '> Carlos Crafts</h3>
                 <p>Carlos crafts compelling campaigns and manages customer feedback to keep our community informed and engaged. His focus on customer satisfaction helps build trust and loyalty.</p>              </center>

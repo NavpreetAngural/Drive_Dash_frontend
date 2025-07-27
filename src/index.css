@@ -63,7 +63,7 @@ span a:hover {
 }
 
 .divs, .divss {
-  @apply w-[200px] h-auto shadow-lg bg-[rgb(180,215,228)] pb-2 rounded-lg hover:shadow-xl hover:scale-110 transition-transform duration-300;
+  @apply w-[250px] h-auto shadow-lg  pb-2 rounded-lg hover:shadow-xl hover:scale-110 transition-transform duration-300;
 }
 
 .divs:hover, .divss:hover {

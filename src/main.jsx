@@ -20,7 +20,6 @@ import Renterprofile from "./pages/Renterprofile";
 import HirerHome from "./pages/Hirerhome";
 import RenterHome from "./pages/Renterhome";
 import Mybookings from "./pages/Mybookings";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const root = document.getElementById("root");
 

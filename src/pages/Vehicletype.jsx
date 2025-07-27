@@ -36,11 +36,13 @@ const Vehicletype = () => {
       <div ref={vehicleRef} style={{opacity:0}} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 !m-8">
         {vehicles.map(v => (
           <div key={v._id} className="bg-white rounded-lg !pb-3 shadow-xl transform hover:scale-105 transition-transform duration-300 ease-in-out overflow-hidden ">
+            <a href={v.url} target='blank'>
             <img
              src={v.url}
               alt={v.vehicleName}
               className="w-full h-48 object-cover rounded-t-lg"
             />
+            </a>
             <div className="p-4">
               <h3 className="text-xl font-bold text-gray-800 mb-2 text-center">{v.vehicleName}</h3>
               <p className="text-sm text-gray-500 mb-2 text-center">Type: {v.vehicleType}</p>
